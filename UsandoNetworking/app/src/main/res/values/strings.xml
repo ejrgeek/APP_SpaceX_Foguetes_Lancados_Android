@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">APP SpaceX: Foguetes</string>
+    <string name="text_name_rocket">name_rocket</string>
+    <string name="text_launch_date">launch_date</string>
+    <string name="text_status_launch">status_launch</string>
+    <string name="text_payload">payload</string>
+</resources>
