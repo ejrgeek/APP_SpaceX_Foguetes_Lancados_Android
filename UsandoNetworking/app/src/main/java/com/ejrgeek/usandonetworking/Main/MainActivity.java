@@ -5,11 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.ejrgeek.usandonetworking.Models.RocketModel;
@@ -20,7 +18,6 @@ import com.ejrgeek.usandonetworking.Recyclerview.RecyclerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +26,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     @BindView(R.id.recycler_view)
     RecyclerView mRecyclerView;
@@ -57,7 +56,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<RocketModel>> call, Response<List<RocketModel>> response) {
 
+                Log.d(TAG, "onResponse: " + response.body().toString());
+
                 rocketModels.addAll(response.body());
+
+                for (RocketModel rocketModel : rocketModels){
+                    Log.d(TAG, "rocketModel: " + rocketModel.toString());
+                }
+
                 mRecyclerView.setAdapter(new RecyclerAdapter(rocketModels));
 
                 progressBar.setVisibility(View.GONE);

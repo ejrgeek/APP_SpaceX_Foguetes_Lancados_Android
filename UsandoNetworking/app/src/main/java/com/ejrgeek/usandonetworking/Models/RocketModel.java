@@ -39,4 +39,13 @@ public class RocketModel {
     public void setmStatusLaunch(boolean mStatusLaunch) {
         this.mStatusLaunch = mStatusLaunch;
     }
+
+    @Override
+    public String toString() {
+        return "RocketModel{" +
+                "rocket=" + rocket +
+                ", mLauchYear='" + mLauchYear + '\'' +
+                ", mStatusLaunch=" + mStatusLaunch +
+                '}';
+    }
 }

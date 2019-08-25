@@ -27,4 +27,12 @@ public class Rocket {
     public void setmRocketName(String mRocketName) {
         this.mRocketName = mRocketName;
     }
+
+    @Override
+    public String toString() {
+        return "Rocket{" +
+                "mSecondStage=" + mSecondStage +
+                ", mRocketName='" + mRocketName + '\'' +
+                '}';
+    }
 }

@@ -16,4 +16,11 @@ public class Payload {
     public void setmPayload(String mPayload) {
         this.mPayload = mPayload;
     }
+
+    @Override
+    public String toString() {
+        return "Payload{" +
+                "mPayload='" + mPayload + '\'' +
+                '}';
+    }
 }

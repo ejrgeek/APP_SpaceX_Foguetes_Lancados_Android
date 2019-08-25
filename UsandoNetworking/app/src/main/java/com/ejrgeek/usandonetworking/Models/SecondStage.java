@@ -18,4 +18,11 @@ public class SecondStage {
     public void setPayloads(ArrayList<Payload> payloads) {
         this.payloads = payloads;
     }
+
+    @Override
+    public String toString() {
+        return "SecondStage{" +
+                "payloads=" + payloads +
+                '}';
+    }
 }
